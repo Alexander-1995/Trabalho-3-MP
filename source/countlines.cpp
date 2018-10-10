@@ -6,6 +6,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "countlines.hpp"
 
 int conta_linha(char nome_arq[Nom_Max_Arq])
@@ -76,11 +77,32 @@ int conta_linha2(char nome_arq[Nom_Max_Arq]){
     while ((input = fgetc(fp)) != EOF){
         if (input  ==  '\n'){
             linhas_total++;
+            printf("Aqui está uma linha\n");
         }
+    }
+    
+    fseek(fp, 0, 0);
+    while ((input = fgetc(fp)) != EOF){
+//        if (input  ==  '\n'){
+//            linhas_total++;
+//            printf("Aqui está uma linha\n");
+//        }
+//        if (input  ==  '\n'){
+//            if ((input = fgetc(fp))  ==  '\n'){
+//                fseek(fp, -1, 1);
+//                linhas_em_branco++;
+//            }
+//        }
         if (input  ==  '\n'){
-            if ((input = fgetc(fp))  ==  '\n'){
-                fseek(fp, -1, 1);
-                linhas_em_branco++;
+            while (isspace(input = fgetc(fp)) /*&& input != '\n'*/){
+//                if (isspace(input)){
+                    if(input /*= fgetc(fp))*/ == '\n'){
+                        //                // Found a non-whitespace character.
+                        //                is_blank = 0;
+                        //                break;
+                        linhas_em_branco++;
+                    }
+//                }
             }
         }
     }
@@ -113,8 +135,32 @@ int conta_linha2(char nome_arq[Nom_Max_Arq]){
             }
         }
     }
-                
-                
+    
+    
+//    int verifica_branca (char const * line)
+//    {
+//        char * ch;
+//        is_blank = -1;
+//
+//        // Iterate through each character.
+//
+//    if (input  ==  '\n'){
+//        while ((input = fgetc(fp)) == '\0')
+//        {
+//            if (!isspace(input))
+//            {
+//                if((input = fgetc(fp)) == '\n'){
+////                // Found a non-whitespace character.
+////                is_blank = 0;
+////                break;
+//                    linhas_em_branco++;
+//                    }
+//            }
+//        }
+//    }
+//        return is_blank;
+//    }
+    
                 
 /*                com_ast++;
                     if ((input = fgetc(fp))  ==  '\n'){

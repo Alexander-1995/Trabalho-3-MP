@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "catch.hpp"  /*!Inclusão da biblioteca catch.hpp para poder realizar os testes.*/
 
 #endif /* countlines_h */

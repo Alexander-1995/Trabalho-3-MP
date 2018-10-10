@@ -8,12 +8,13 @@
 #include "catch.hpp" /*!Inclusão da biblioteca catch.hpp para poder realizar os testes.*/
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "countlines.hpp"
 
 char nome_arq[Nom_Max_Arq] = "fibonacci.c";
 
 TEST_CASE( "Teste de Contagem de Linhas do Código", "[count_lines_of_code]" ) {
-    REQUIRE(conta_linha2(nome_arq) == 31 );
+    REQUIRE(conta_linha2(nome_arq) == 37 );
 
 }
 
