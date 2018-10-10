@@ -2,7 +2,7 @@
 //  testa_countlines.c
 //  
 //
-//  Created by Alexander André De Souza Vieira on 03/20/2018.
+//  Created by Alexander André De Souza Vieira on 03/10/2018.
 //
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp" /*!Inclusão da biblioteca catch.hpp para poder realizar os testes.*/
@@ -14,7 +14,7 @@
 char nome_arq[Nom_Max_Arq] = "rand.c";
 
 TEST_CASE( "Teste de Contagem de Linhas do Código", "[count_lines_of_code]" ) {
-    REQUIRE(conta_linha(nome_arq) == 37 );
+    REQUIRE(quant_linhas_efetivas(nome_arq) == 37 );
 
 }
 
