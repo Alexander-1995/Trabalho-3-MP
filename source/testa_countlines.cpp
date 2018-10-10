@@ -14,7 +14,7 @@
 char nome_arq[Nom_Max_Arq] = "fibonacci.c";
 
 TEST_CASE( "Teste de Contagem de Linhas do Código", "[count_lines_of_code]" ) {
-    REQUIRE(conta_linha2(nome_arq) == 37 );
+    REQUIRE(conta_linha(nome_arq) == 37 );
 
 }
 

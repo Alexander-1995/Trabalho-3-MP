@@ -18,4 +18,3 @@
 
 
 int conta_linha(char nome_arq[Nom_Max_Arq]);
-int conta_linha2(char nome_arq[Nom_Max_Arq]);
