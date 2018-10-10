@@ -11,14 +11,14 @@
 #include <ctype.h>
 #include "countlines.hpp"
 
-char nome_arq[Nom_Max_Arq] = "fibonacci.c";
+char nome_arq[Nom_Max_Arq] = "rand.c";
 
 TEST_CASE( "Teste de Contagem de Linhas do Código", "[count_lines_of_code]" ) {
     REQUIRE(conta_linha(nome_arq) == 37 );
 
 }
 
-////Teste utilizado anteriormente
+////Teste utilizado inicialmente
 //int main(void)
 //{
 //    int x;
