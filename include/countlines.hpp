@@ -1,5 +1,5 @@
-//
-//  countlines.h
+// "Copyright 2018 Alexander André de Souza"
+//  countlines.hpp
 //  
 //
 //  Created by Alexander André De Souza Vieira on 03/10/2018.
