@@ -4,6 +4,11 @@
 //
 //  Created by Alexander André De Souza Vieira on 10/10/2018.
 //
+// Número total de linhas: 29
+// Número total de linhas comentadas no estilo 2 barras: 14
+// Número total de linhas em branco: 4
+// Número total de linhas comentadas no estilo barra-asterisco-asterisco-barra: 1
+// Número efetivo de linhas de código: 10
 
 #include <stdio.h>
 #include <stdio.h>
