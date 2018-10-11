@@ -52,3 +52,10 @@ TEST_CASE("Teste de Contagem de Linhas do Código Printa ASC", "[count_lines_of_
     REQUIRE(quant_linhas_efetivas(nome_arq3) == 10);
 }
 
+TEST_CASE("Teste de Contagem de Linhas do Código Calcula Soma", "[count_lines_of_code]") {
+    REQUIRE(conta_linha(nome_arq4) == 26);
+    REQUIRE(conta_coment_barra(nome_arq4) == 7);
+    REQUIRE(conta_linha_em_branco(nome_arq4) == 6);
+    REQUIRE(conta_coment_barra_e_ast(nome_arq4) == 0);
+    REQUIRE(quant_linhas_efetivas(nome_arq4) == 13);
+}
