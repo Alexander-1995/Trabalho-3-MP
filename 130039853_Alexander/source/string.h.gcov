@@ -1,0 +1,115 @@
+        -:    0:Source:/Library/Developer/CommandLineTools/usr/include/c++/v1/string.h
+        -:    0:Graph:testa_countlines.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1:// -*- C++ -*-
+        -:    2://===--------------------------- string.h ---------------------------------===//
+        -:    3://
+        -:    4://                     The LLVM Compiler Infrastructure
+        -:    5://
+        -:    6:// This file is distributed under the University of Illinois Open Source
+        -:    7:// License. See LICENSE.TXT for details.
+        -:    8://
+        -:    9://===----------------------------------------------------------------------===//
+        -:   10:
+        -:   11:#ifndef _LIBCPP_STRING_H
+        -:   12:#define _LIBCPP_STRING_H
+        -:   13:
+        -:   14:/*
+        -:   15:    string.h synopsis
+        -:   16:
+        -:   17:Macros:
+        -:   18:
+        -:   19:    NULL
+        -:   20:
+        -:   21:Types:
+        -:   22:
+        -:   23:    size_t
+        -:   24:
+        -:   25:void* memcpy(void* restrict s1, const void* restrict s2, size_t n);
+        -:   26:void* memmove(void* s1, const void* s2, size_t n);
+        -:   27:char* strcpy (char* restrict s1, const char* restrict s2);
+        -:   28:char* strncpy(char* restrict s1, const char* restrict s2, size_t n);
+        -:   29:char* strcat (char* restrict s1, const char* restrict s2);
+        -:   30:char* strncat(char* restrict s1, const char* restrict s2, size_t n);
+        -:   31:int memcmp(const void* s1, const void* s2, size_t n);
+        -:   32:int strcmp (const char* s1, const char* s2);
+        -:   33:int strncmp(const char* s1, const char* s2, size_t n);
+        -:   34:int strcoll(const char* s1, const char* s2);
+        -:   35:size_t strxfrm(char* restrict s1, const char* restrict s2, size_t n);
+        -:   36:const void* memchr(const void* s, int c, size_t n);
+        -:   37:      void* memchr(      void* s, int c, size_t n);
+        -:   38:const char* strchr(const char* s, int c);
+        -:   39:      char* strchr(      char* s, int c);
+        -:   40:size_t strcspn(const char* s1, const char* s2);
+        -:   41:const char* strpbrk(const char* s1, const char* s2);
+        -:   42:      char* strpbrk(      char* s1, const char* s2);
+        -:   43:const char* strrchr(const char* s, int c);
+        -:   44:      char* strrchr(      char* s, int c);
+        -:   45:size_t strspn(const char* s1, const char* s2);
+        -:   46:const char* strstr(const char* s1, const char* s2);
+        -:   47:      char* strstr(      char* s1, const char* s2);
+        -:   48:char* strtok(char* restrict s1, const char* restrict s2);
+        -:   49:void* memset(void* s, int c, size_t n);
+        -:   50:char* strerror(int errnum);
+        -:   51:size_t strlen(const char* s);
+        -:   52:
+        -:   53:*/
+        -:   54:
+        -:   55:#include <__config>
+        -:   56:
+        -:   57:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   58:#pragma GCC system_header
+        -:   59:#endif
+        -:   60:
+        -:   61:#include_next <string.h>
+        -:   62:
+        -:   63:// MSVCRT, GNU libc and its derivates may already have the correct prototype in
+        -:   64:// <string.h>. This macro can be defined by users if their C library provides
+        -:   65:// the right signature.
+        -:   66:#if defined(__CORRECT_ISO_CPP_STRING_H_PROTO) || defined(_LIBCPP_MSVCRT) || \
+        -:   67:    defined(__sun__) || defined(_STRING_H_CPLUSPLUS_98_CONFORMANCE_)
+        -:   68:#define _LIBCPP_STRING_H_HAS_CONST_OVERLOADS
+        -:   69:#endif
+        -:   70:
+        -:   71:#if defined(__cplusplus) && !defined(_LIBCPP_STRING_H_HAS_CONST_OVERLOADS) && defined(_LIBCPP_PREFERRED_OVERLOAD)
+        -:   72:extern "C++" {
+        -:   73:inline _LIBCPP_INLINE_VISIBILITY
+        -:   74:char* __libcpp_strchr(const char* __s, int __c) {return (char*)strchr(__s, __c);}
+        -:   75:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+        -:   76:const char* strchr(const char* __s, int __c) {return __libcpp_strchr(__s, __c);}
+        -:   77:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+        -:   78:      char* strchr(      char* __s, int __c) {return __libcpp_strchr(__s, __c);}
+        -:   79:
+        -:   80:inline _LIBCPP_INLINE_VISIBILITY
+        -:   81:char* __libcpp_strpbrk(const char* __s1, const char* __s2) {return (char*)strpbrk(__s1, __s2);}
+        -:   82:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+        -:   83:const char* strpbrk(const char* __s1, const char* __s2) {return __libcpp_strpbrk(__s1, __s2);}
+        -:   84:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+        -:   85:      char* strpbrk(      char* __s1, const char* __s2) {return __libcpp_strpbrk(__s1, __s2);}
+        -:   86:
+        -:   87:inline _LIBCPP_INLINE_VISIBILITY
+        -:   88:char* __libcpp_strrchr(const char* __s, int __c) {return (char*)strrchr(__s, __c);}
+        -:   89:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+        -:   90:const char* strrchr(const char* __s, int __c) {return __libcpp_strrchr(__s, __c);}
+        -:   91:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+        -:   92:      char* strrchr(      char* __s, int __c) {return __libcpp_strrchr(__s, __c);}
+        -:   93:
+        -:   94:inline _LIBCPP_INLINE_VISIBILITY
+    #####:   95:void* __libcpp_memchr(const void* __s, int __c, size_t __n) {return (void*)memchr(__s, __c, __n);}
+        -:   96:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+    #####:   97:const void* memchr(const void* __s, int __c, size_t __n) {return __libcpp_memchr(__s, __c, __n);}
+        -:   98:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+        -:   99:      void* memchr(      void* __s, int __c, size_t __n) {return __libcpp_memchr(__s, __c, __n);}
+        -:  100:
+        -:  101:inline _LIBCPP_INLINE_VISIBILITY
+        -:  102:char* __libcpp_strstr(const char* __s1, const char* __s2) {return (char*)strstr(__s1, __s2);}
+        -:  103:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+        -:  104:const char* strstr(const char* __s1, const char* __s2) {return __libcpp_strstr(__s1, __s2);}
+        -:  105:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_PREFERRED_OVERLOAD
+        -:  106:      char* strstr(      char* __s1, const char* __s2) {return __libcpp_strstr(__s1, __s2);}
+        -:  107:}
+        -:  108:#endif
+        -:  109:
+        -:  110:#endif  // _LIBCPP_STRING_H
