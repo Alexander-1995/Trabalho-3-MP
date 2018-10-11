@@ -92,7 +92,7 @@ int quant_linhas_efetivas(char nome_arq[Nom_Max_Arq]) {
 //    }
 
     quant_final_linhas = linhas_total - linhas_em_branco - com_ast - com_barra;
-    printf("Número total de linhas: %d\n", linhas_total);
+    printf("\nNúmero total de linhas: %d\n", linhas_total);
     printf("Número total de linhas comentadas no estilo 2 barras: %d\n", com_barra);
     printf("Número total de linhas em branco: %d\n", linhas_em_branco);
     printf("Número total de linhas comentadas no estilo barra-asterisco-asterisco-barra: %d\n", com_ast);
@@ -105,7 +105,6 @@ int quant_linhas_efetivas(char nome_arq[Nom_Max_Arq]) {
 
 
 int conta_linha(char nome_arq[Nom_Max_Arq]) {
-                              
     int linhas_total = 0;
     char input;
     FILE *fp2;
