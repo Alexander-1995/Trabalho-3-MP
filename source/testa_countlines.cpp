@@ -44,3 +44,11 @@ TEST_CASE("Teste de Contagem de Linhas do Código Rand", "[count_lines_of_code]"
     REQUIRE(quant_linhas_efetivas(nome_arq2) == 13);
 }
 
+TEST_CASE("Teste de Contagem de Linhas do Código Printa ASC", "[count_lines_of_code]") {
+    REQUIRE(conta_linha(nome_arq3) == 24);
+    REQUIRE(conta_coment_barra(nome_arq3) == 9);
+    REQUIRE(conta_linha_em_branco(nome_arq3) == 4);
+    REQUIRE(conta_coment_barra_e_ast(nome_arq3) == 1);
+    REQUIRE(quant_linhas_efetivas(nome_arq3) == 10);
+}
+
