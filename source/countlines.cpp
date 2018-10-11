@@ -117,6 +117,7 @@ int conta_linha(char nome_arq[Nom_Max_Arq]) {
             linhas_total++;
         }
     }
+    fclose(fp2);
     return linhas_total;
 }
 
@@ -137,6 +138,7 @@ int conta_linha_em_branco(char nome_arq[Nom_Max_Arq]) {
             }
         }
     }
+    fclose(fp3);
     return linhas_em_branco;
 }
 
@@ -156,6 +158,7 @@ int conta_coment_barra(char nome_arq[Nom_Max_Arq]) {
             }
         }
     }
+    fclose(fp4);
     return com_barra;
 }
 
@@ -187,5 +190,6 @@ int conta_coment_barra_e_ast(char nome_arq[Nom_Max_Arq]) {
             }
         }
         }
+    fclose(fp5);
     return com_ast;
 }

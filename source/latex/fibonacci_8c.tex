@@ -1,0 +1,46 @@
+\hypertarget{fibonacci_8c}{}\section{Referência do Arquivo fibonacci.\+c}
+\label{fibonacci_8c}\index{fibonacci.\+c@{fibonacci.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{fibonacci_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Funções}
+\mbox{\Hypertarget{fibonacci_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{fibonacci_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{fibonacci.\+c@{fibonacci.\+c}!main@{main}}
+\index{main@{main}!fibonacci.\+c@{fibonacci.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definição na linha 11 do arquivo fibonacci.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11           \{}
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} n =0;, first = 0, second = 1, next, c;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{/*}}
+\DoxyCodeLine{15 \textcolor{comment}{printf("Enter the number of terms\(\backslash\)n");}}
+\DoxyCodeLine{16 \textcolor{comment}{scanf("\%d", \&n);}}
+\DoxyCodeLine{17 \textcolor{comment}{printf("Hello world!");}}
+\DoxyCodeLine{18 \textcolor{comment}{printf("First \%d terms of Fibonacci series are:\(\backslash\)n", n);}}
+\DoxyCodeLine{19 \textcolor{comment}{*/}}
+\DoxyCodeLine{20     \textcolor{keywordflow}{for} (c = 0; c < n; c++)\{}
+\DoxyCodeLine{21         \textcolor{keywordflow}{if} (c <= 1)\{}
+\DoxyCodeLine{22             next = c;}
+\DoxyCodeLine{23         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{24             next = first + second;}
+\DoxyCodeLine{25             first = second;}
+\DoxyCodeLine{26             second = next;}
+\DoxyCodeLine{27         \}}
+\DoxyCodeLine{28 \textcolor{comment}{//        printf("\%d\(\backslash\)n", next);}}
+\DoxyCodeLine{29         printf(\textcolor{stringliteral}{"oi"});}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{32 \}}
+\end{DoxyCode}

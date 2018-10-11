@@ -1,0 +1,266 @@
+\hypertarget{countlines_8cpp}{}\section{Referência do Arquivo countlines.\+cpp}
+\label{countlines_8cpp}\index{countlines.\+cpp@{countlines.\+cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}countlines.\+hpp\char`\"{}}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{countlines_8cpp_afb8967b97abef22b31a869399f4ada8d}{quant\+\_\+linhas\+\_\+efetivas}} (char \mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\+\_\+arq}}\mbox{[}Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]})
+\item 
+int \mbox{\hyperlink{countlines_8cpp_a5baaac315f696fabe218d596b4231b45}{conta\+\_\+linha}} (char \mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\+\_\+arq}}\mbox{[}Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]})
+\item 
+int \mbox{\hyperlink{countlines_8cpp_adb7fe089578f398a4701e37d1da38b06}{conta\+\_\+linha\+\_\+em\+\_\+branco}} (char \mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\+\_\+arq}}\mbox{[}Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]})
+\item 
+int \mbox{\hyperlink{countlines_8cpp_a87c05c32697952622eec8c77fd48ef2f}{conta\+\_\+coment\+\_\+barra}} (char \mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\+\_\+arq}}\mbox{[}Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]})
+\item 
+int \mbox{\hyperlink{countlines_8cpp_a9fae81e197083125205c322377bb2380}{conta\+\_\+coment\+\_\+barra\+\_\+e\+\_\+ast}} (char \mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\+\_\+arq}}\mbox{[}Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Funções}
+\mbox{\Hypertarget{countlines_8cpp_a87c05c32697952622eec8c77fd48ef2f}\label{countlines_8cpp_a87c05c32697952622eec8c77fd48ef2f}} 
+\index{countlines.\+cpp@{countlines.\+cpp}!conta\+\_\+coment\+\_\+barra@{conta\+\_\+coment\+\_\+barra}}
+\index{conta\+\_\+coment\+\_\+barra@{conta\+\_\+coment\+\_\+barra}!countlines.\+cpp@{countlines.\+cpp}}
+\subsubsection{\texorpdfstring{conta\+\_\+coment\+\_\+barra()}{conta\_coment\_barra()}}
+{\footnotesize\ttfamily int conta\+\_\+coment\+\_\+barra (\begin{DoxyParamCaption}\item[{char}]{nome\+\_\+arq\mbox{[}\+Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definição na linha 145 do arquivo countlines.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{145                                                    \{}
+\DoxyCodeLine{146     \textcolor{keywordtype}{int} com\_barra = 0;}
+\DoxyCodeLine{147     \textcolor{keywordtype}{char} input;}
+\DoxyCodeLine{148     FILE *fp4;}
+\DoxyCodeLine{149     fp4 = fopen(\mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\_arq}}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     fseek(fp4, 0, 0);}
+\DoxyCodeLine{152     \textcolor{keywordflow}{while} ((input = fgetc(fp4)) != EOF) \{}
+\DoxyCodeLine{153     \textcolor{comment}{/* Estrutura que verifica as linhas que}}
+\DoxyCodeLine{154 \textcolor{comment}{       estão comentadas no estilo 2 barras*/}}
+\DoxyCodeLine{155         \textcolor{keywordflow}{if} (input  ==  \textcolor{charliteral}{'/'}) \{}
+\DoxyCodeLine{156             \textcolor{keywordflow}{if} ((input = fgetc(fp4))  ==  \textcolor{charliteral}{'/'}) \{}
+\DoxyCodeLine{157                 com\_barra++;}
+\DoxyCodeLine{158             \}}
+\DoxyCodeLine{159         \}}
+\DoxyCodeLine{160     \}}
+\DoxyCodeLine{161     fclose(fp4);}
+\DoxyCodeLine{162     \textcolor{keywordflow}{return} com\_barra;}
+\DoxyCodeLine{163 \}}
+\end{DoxyCode}
+\mbox{\Hypertarget{countlines_8cpp_a9fae81e197083125205c322377bb2380}\label{countlines_8cpp_a9fae81e197083125205c322377bb2380}} 
+\index{countlines.\+cpp@{countlines.\+cpp}!conta\+\_\+coment\+\_\+barra\+\_\+e\+\_\+ast@{conta\+\_\+coment\+\_\+barra\+\_\+e\+\_\+ast}}
+\index{conta\+\_\+coment\+\_\+barra\+\_\+e\+\_\+ast@{conta\+\_\+coment\+\_\+barra\+\_\+e\+\_\+ast}!countlines.\+cpp@{countlines.\+cpp}}
+\subsubsection{\texorpdfstring{conta\+\_\+coment\+\_\+barra\+\_\+e\+\_\+ast()}{conta\_coment\_barra\_e\_ast()}}
+{\footnotesize\ttfamily int conta\+\_\+coment\+\_\+barra\+\_\+e\+\_\+ast (\begin{DoxyParamCaption}\item[{char}]{nome\+\_\+arq\mbox{[}\+Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definição na linha 165 do arquivo countlines.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{165                                                          \{}
+\DoxyCodeLine{166     \textcolor{keywordtype}{int} com\_ast = 0;}
+\DoxyCodeLine{167     \textcolor{keywordtype}{char} input;}
+\DoxyCodeLine{168     FILE *fp5;}
+\DoxyCodeLine{169     fp5 = fopen(\mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\_arq}}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     fseek(fp5, 0, 0);}
+\DoxyCodeLine{172     \textcolor{keywordflow}{while} ((input = fgetc(fp5)) != EOF) \{}
+\DoxyCodeLine{173         \textcolor{comment}{/* Estrutura que procura por comentários no estilo}}
+\DoxyCodeLine{174 \textcolor{comment}{         barra-asterisco-asterisco-barra, mas que estão em linhas múltiplas*/}}
+\DoxyCodeLine{175         \textcolor{keywordflow}{if} (input  ==  \textcolor{charliteral}{'/'}) \{}
+\DoxyCodeLine{176             \textcolor{keywordflow}{if} ((input = fgetc(fp5))  ==  \textcolor{charliteral}{'*'}) \{}
+\DoxyCodeLine{177                 \textcolor{keywordflow}{while} (((input = fgetc(fp5)) != \textcolor{charliteral}{'*'} \&\&}
+\DoxyCodeLine{178                         (input = fgetc(fp5)) != \textcolor{charliteral}{'/'})) \{}
+\DoxyCodeLine{179                     \textcolor{keywordflow}{if} (input  ==  \textcolor{charliteral}{'\(\backslash\)n'}) \{}
+\DoxyCodeLine{180                         com\_ast++;}
+\DoxyCodeLine{181                     \}}
+\DoxyCodeLine{182                 \}}
+\DoxyCodeLine{183                 \textcolor{keywordflow}{if} (input  ==  \textcolor{charliteral}{'*'}) \{}
+\DoxyCodeLine{184                     \textcolor{comment}{/*Estrutura que procura por comentários no estilo}}
+\DoxyCodeLine{185 \textcolor{comment}{                     barra-asterisco-asterisco-barra, mas que estão em linhas únicas*/}}
+\DoxyCodeLine{186                     \textcolor{keywordflow}{if} ((input = fgetc(fp5))  ==  \textcolor{charliteral}{'/'}) \{}
+\DoxyCodeLine{187                         com\_ast++;}
+\DoxyCodeLine{188                     \}}
+\DoxyCodeLine{189                 \}}
+\DoxyCodeLine{190             \}}
+\DoxyCodeLine{191         \}}
+\DoxyCodeLine{192         \}}
+\DoxyCodeLine{193     fclose(fp5);}
+\DoxyCodeLine{194     \textcolor{keywordflow}{return} com\_ast;}
+\DoxyCodeLine{195 \}}
+\end{DoxyCode}
+\mbox{\Hypertarget{countlines_8cpp_a5baaac315f696fabe218d596b4231b45}\label{countlines_8cpp_a5baaac315f696fabe218d596b4231b45}} 
+\index{countlines.\+cpp@{countlines.\+cpp}!conta\+\_\+linha@{conta\+\_\+linha}}
+\index{conta\+\_\+linha@{conta\+\_\+linha}!countlines.\+cpp@{countlines.\+cpp}}
+\subsubsection{\texorpdfstring{conta\+\_\+linha()}{conta\_linha()}}
+{\footnotesize\ttfamily int conta\+\_\+linha (\begin{DoxyParamCaption}\item[{char}]{nome\+\_\+arq\mbox{[}\+Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definição na linha 107 do arquivo countlines.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107                                             \{}
+\DoxyCodeLine{108     \textcolor{keywordtype}{int} linhas\_total = 0;}
+\DoxyCodeLine{109     \textcolor{keywordtype}{char} input;}
+\DoxyCodeLine{110     FILE *fp2;}
+\DoxyCodeLine{111     fp2 = fopen(\mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\_arq}}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keywordflow}{while} ((input = fgetc(fp2)) != EOF) \{}
+\DoxyCodeLine{114         \textcolor{keywordflow}{if} (input  ==  \textcolor{charliteral}{'\(\backslash\)n'}) \{}
+\DoxyCodeLine{115 \textcolor{comment}{/* Estrutura que faz uma varredura total no arquivo}}
+\DoxyCodeLine{116 \textcolor{comment}{    em busca da quantidade de linhas totais*/}}
+\DoxyCodeLine{117             linhas\_total++;}
+\DoxyCodeLine{118         \}}
+\DoxyCodeLine{119     \}}
+\DoxyCodeLine{120     fclose(fp2);}
+\DoxyCodeLine{121     \textcolor{keywordflow}{return} linhas\_total;}
+\DoxyCodeLine{122 \}}
+\end{DoxyCode}
+\mbox{\Hypertarget{countlines_8cpp_adb7fe089578f398a4701e37d1da38b06}\label{countlines_8cpp_adb7fe089578f398a4701e37d1da38b06}} 
+\index{countlines.\+cpp@{countlines.\+cpp}!conta\+\_\+linha\+\_\+em\+\_\+branco@{conta\+\_\+linha\+\_\+em\+\_\+branco}}
+\index{conta\+\_\+linha\+\_\+em\+\_\+branco@{conta\+\_\+linha\+\_\+em\+\_\+branco}!countlines.\+cpp@{countlines.\+cpp}}
+\subsubsection{\texorpdfstring{conta\+\_\+linha\+\_\+em\+\_\+branco()}{conta\_linha\_em\_branco()}}
+{\footnotesize\ttfamily int conta\+\_\+linha\+\_\+em\+\_\+branco (\begin{DoxyParamCaption}\item[{char}]{nome\+\_\+arq\mbox{[}\+Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definição na linha 124 do arquivo countlines.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124                                                       \{}
+\DoxyCodeLine{125     \textcolor{keywordtype}{int} linhas\_em\_branco = 0;}
+\DoxyCodeLine{126     \textcolor{keywordtype}{char} input;}
+\DoxyCodeLine{127     FILE *fp3;}
+\DoxyCodeLine{128     fp3 = fopen(\mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\_arq}}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     fseek(fp3, 0, 0);}
+\DoxyCodeLine{131     \textcolor{keywordflow}{while} ((input = fgetc(fp3)) != EOF) \{}
+\DoxyCodeLine{132         \textcolor{comment}{// Estrutura que faz a varredura do arquivo na busca e linhas em branco}}
+\DoxyCodeLine{133         \textcolor{keywordflow}{if} (input  ==  \textcolor{charliteral}{'\(\backslash\)n'}) \{}
+\DoxyCodeLine{134             \textcolor{keywordflow}{while} (isspace(input = fgetc(fp3))) \{}
+\DoxyCodeLine{135                 \textcolor{keywordflow}{if} (input == \textcolor{charliteral}{'\(\backslash\)n'}) \{}
+\DoxyCodeLine{136                     linhas\_em\_branco++;}
+\DoxyCodeLine{137                 \}}
+\DoxyCodeLine{138             \}}
+\DoxyCodeLine{139         \}}
+\DoxyCodeLine{140     \}}
+\DoxyCodeLine{141     fclose(fp3);}
+\DoxyCodeLine{142     \textcolor{keywordflow}{return} linhas\_em\_branco;}
+\DoxyCodeLine{143 \}}
+\end{DoxyCode}
+\mbox{\Hypertarget{countlines_8cpp_afb8967b97abef22b31a869399f4ada8d}\label{countlines_8cpp_afb8967b97abef22b31a869399f4ada8d}} 
+\index{countlines.\+cpp@{countlines.\+cpp}!quant\+\_\+linhas\+\_\+efetivas@{quant\+\_\+linhas\+\_\+efetivas}}
+\index{quant\+\_\+linhas\+\_\+efetivas@{quant\+\_\+linhas\+\_\+efetivas}!countlines.\+cpp@{countlines.\+cpp}}
+\subsubsection{\texorpdfstring{quant\+\_\+linhas\+\_\+efetivas()}{quant\_linhas\_efetivas()}}
+{\footnotesize\ttfamily int quant\+\_\+linhas\+\_\+efetivas (\begin{DoxyParamCaption}\item[{char}]{nome\+\_\+arq\mbox{[}\+Nom\+\_\+\+Max\+\_\+\+Arq\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definição na linha 12 do arquivo countlines.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                                                       \{}
+\DoxyCodeLine{13     FILE *fp;}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} quant\_final\_linhas, linhas\_total = 0;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} com\_barra = 0, com\_ast = 0, linhas\_em\_branco = 0;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{char} input;  \textcolor{comment}{// Variável para armazenar o caractere lido do arquivo}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     fp = fopen(\mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\_arq}}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{if} (fp == NULL) \{     \textcolor{comment}{// Checa se o arquivo existe}}
+\DoxyCodeLine{21 \textcolor{comment}{//        printf("Could not open file \%s", nome\_arq);}}
+\DoxyCodeLine{22         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     linhas\_total = \mbox{\hyperlink{countlines_8cpp_a5baaac315f696fabe218d596b4231b45}{conta\_linha}}(\mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\_arq}});}
+\DoxyCodeLine{26     linhas\_em\_branco = \mbox{\hyperlink{countlines_8cpp_adb7fe089578f398a4701e37d1da38b06}{conta\_linha\_em\_branco}}(\mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\_arq}});}
+\DoxyCodeLine{27     com\_barra = \mbox{\hyperlink{countlines_8cpp_a87c05c32697952622eec8c77fd48ef2f}{conta\_coment\_barra}}(\mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\_arq}});}
+\DoxyCodeLine{28     com\_ast = \mbox{\hyperlink{countlines_8cpp_a9fae81e197083125205c322377bb2380}{conta\_coment\_barra\_e\_ast}}(\mbox{\hyperlink{testa__countlines_8cpp_a49915d6a450c5cedcc41f00e66a33523}{nome\_arq}});}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{//    conta\_linha(fp)}}
+\DoxyCodeLine{32 \textcolor{comment}{//    while ((input = fgetc(fp)) != EOF)\{}}
+\DoxyCodeLine{33 \textcolor{comment}{//        if (input  ==  '\(\backslash\)n')\{}}
+\DoxyCodeLine{34 \textcolor{comment}{// //Estrutura que faz uma varredura total no arquivo}}
+\DoxyCodeLine{35 \textcolor{comment}{//    \(\backslash\)\(\backslash\) em busca da quantidade de linhas totais}}
+\DoxyCodeLine{36 \textcolor{comment}{//            linhas\_total++;}}
+\DoxyCodeLine{37 \textcolor{comment}{//        \}}}
+\DoxyCodeLine{38 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{//    conta\_linha\_em\_branco(fp);}}
+\DoxyCodeLine{43 \textcolor{comment}{//    fseek(fp, 0, 0);}}
+\DoxyCodeLine{44 \textcolor{comment}{//    while ((input = fgetc(fp)) != EOF)\{}}
+\DoxyCodeLine{45 \textcolor{comment}{//  //Estrutura que faz a varredura do arquivo na busca e linhas em branco}}
+\DoxyCodeLine{46 \textcolor{comment}{//        if (input  ==  '\(\backslash\)n')\{}}
+\DoxyCodeLine{47 \textcolor{comment}{//            while (isspace(input = fgetc(fp)))\{}}
+\DoxyCodeLine{48 \textcolor{comment}{//                if(input == '\(\backslash\)n')\{}}
+\DoxyCodeLine{49 \textcolor{comment}{//                    linhas\_em\_branco++;}}
+\DoxyCodeLine{50 \textcolor{comment}{//                \}}}
+\DoxyCodeLine{51 \textcolor{comment}{//            \}}}
+\DoxyCodeLine{52 \textcolor{comment}{//        \}}}
+\DoxyCodeLine{53 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{//  conta\_coment\_barra(fp)}}
+\DoxyCodeLine{58 \textcolor{comment}{//    fseek(fp, 0, 0);}}
+\DoxyCodeLine{59 \textcolor{comment}{//    while ((input = fgetc(fp)) != EOF)\{}}
+\DoxyCodeLine{60 \textcolor{comment}{// Estrutura que verifica as linhas que estão comentadas no estilo 2 barras (//)}}
+\DoxyCodeLine{61 \textcolor{comment}{//        if (input  ==  '/')\{}}
+\DoxyCodeLine{62 \textcolor{comment}{//            if ((input = fgetc(fp))  ==  '/')\{}}
+\DoxyCodeLine{63 \textcolor{comment}{//                com\_barra++;}}
+\DoxyCodeLine{64 \textcolor{comment}{//            \}}}
+\DoxyCodeLine{65 \textcolor{comment}{//        \}}}
+\DoxyCodeLine{66 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{//   conta\_coment\_barra\_e\_ast(FILE* fp)}}
+\DoxyCodeLine{71 \textcolor{comment}{//    fseek(fp, 0, 0);}}
+\DoxyCodeLine{72 \textcolor{comment}{//    while ((input = fgetc(fp)) != EOF)\{}}
+\DoxyCodeLine{73 \textcolor{comment}{// //Estrutura que procura por comentários no estilo}}
+\DoxyCodeLine{74 \textcolor{comment}{// barra-asterisco-asterisco-barra, mas que estão em linhas múltiplas}}
+\DoxyCodeLine{75 \textcolor{comment}{//        if (input  ==  '/')\{}}
+\DoxyCodeLine{76 \textcolor{comment}{//            if ((input = fgetc(fp))  ==  '*')\{}}
+\DoxyCodeLine{77 \textcolor{comment}{//   while (((input = fgetc(fp)) != '*' and (input = fgetc(fp)) != '/'))\{}}
+\DoxyCodeLine{78 \textcolor{comment}{//                    if (input  ==  '\(\backslash\)n')\{}}
+\DoxyCodeLine{79 \textcolor{comment}{//                        printf("\(\backslash\)n oi +1");}}
+\DoxyCodeLine{80 \textcolor{comment}{//                        com\_ast++;}}
+\DoxyCodeLine{81 \textcolor{comment}{//                    \}}}
+\DoxyCodeLine{82 \textcolor{comment}{//                \}}}
+\DoxyCodeLine{83 \textcolor{comment}{//                if (input  ==  '*')\{}}
+\DoxyCodeLine{84 \textcolor{comment}{// //Estrutura que procura por comentários no estilo}}
+\DoxyCodeLine{85 \textcolor{comment}{// barra-asterisco-asterisco-barra, mas que estão em linhas únicas}}
+\DoxyCodeLine{86 \textcolor{comment}{//                    if ((input = fgetc(fp))  ==  '/')\{}}
+\DoxyCodeLine{87 \textcolor{comment}{//                        com\_ast++;}}
+\DoxyCodeLine{88 \textcolor{comment}{//                    \}}}
+\DoxyCodeLine{89 \textcolor{comment}{//                \}}}
+\DoxyCodeLine{90 \textcolor{comment}{//            \}}}
+\DoxyCodeLine{91 \textcolor{comment}{//        \}}}
+\DoxyCodeLine{92 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     quant\_final\_linhas = linhas\_total - linhas\_em\_branco - com\_ast - com\_barra;}
+\DoxyCodeLine{95     printf(\textcolor{stringliteral}{"\(\backslash\)nNúmero total de linhas: \%d\(\backslash\)n"}, linhas\_total);}
+\DoxyCodeLine{96     printf(\textcolor{stringliteral}{"Número total de linhas comentadas no estilo 2 barras: \%d\(\backslash\)n"}, com\_barra);}
+\DoxyCodeLine{97     printf(\textcolor{stringliteral}{"Número total de linhas em branco: \%d\(\backslash\)n"}, linhas\_em\_branco);}
+\DoxyCodeLine{98     printf(\textcolor{stringliteral}{"Número total de linhas comentadas no estilo barra-asterisco-asterisco-barra: \%d\(\backslash\)n"}, com\_ast);}
+\DoxyCodeLine{99     printf(\textcolor{stringliteral}{"Número efetivo de linhas de código: \%d\(\backslash\)n"}, quant\_final\_linhas);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     fclose(fp);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordflow}{return} quant\_final\_linhas;}
+\DoxyCodeLine{104 \}}
+\end{DoxyCode}
