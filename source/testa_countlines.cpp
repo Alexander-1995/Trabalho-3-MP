@@ -14,9 +14,6 @@
 
 char nome_arq[Nom_Max_Arq] = "fibonacci.c";
 
-TEST_CASE("Teste de Contagem de Linhas do Código", "[count_lines_of_code]") {
-    REQUIRE(quant_linhas_efetivas(nome_arq) == 37);
-}
 // //Teste utilizado inicialmente
 // int main(void)
 // {
@@ -27,3 +24,11 @@ TEST_CASE("Teste de Contagem de Linhas do Código", "[count_lines_of_code]") {
 //    printf("\n\n\n%d\n",x);
 //        return 0;
 // }
+
+TEST_CASE("Teste de Contagem de Linhas do Código Fibonacci", "[count_lines_of_code]") {
+    REQUIRE(quant_linhas_efetivas(nome_arq) == 16);
+    REQUIRE(conta_linha(nome_arq) == 32);
+    REQUIRE(conta_linha_em_branco(nome_arq) == 3);
+    REQUIRE(conta_coment_barra(nome_arq) == 6);
+    REQUIRE(conta_coment_barra_e_ast(nome_arq) == 7);
+}

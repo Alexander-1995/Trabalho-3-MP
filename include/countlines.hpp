@@ -17,8 +17,8 @@
 #endif /* countlines_h */
 
 int quant_linhas_efetivas(char nome_arq[Nom_Max_Arq]);
-int conta_linha(FILE*);
-int conta_linha_em_branco(FILE*);
-int conta_coment_barra(FILE*);
-int conta_coment_barra_e_ast(FILE*);
+int conta_linha(char nome_arq[Nom_Max_Arq]);
+int conta_linha_em_branco(char nome_arq[Nom_Max_Arq]);
+int conta_coment_barra(char nome_arq[Nom_Max_Arq]);
+int conta_coment_barra_e_ast(char nome_arq[Nom_Max_Arq]);
 
